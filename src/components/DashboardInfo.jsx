@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function DashboardInfo() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
- const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "https://social-authapp-frontend.vercel.app";
+ const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   useEffect(() => {
     const fetchUser = async () => {
       try {

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function DashboardInfo() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
- const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+ const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -23,7 +23,7 @@ export default function DashboardInfo() {
     };
 
     fetchUser();
-  }, []);
+  }, [baseUrl]);
 
   const handleLogout = async () => {
     try {
